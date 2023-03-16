@@ -103,7 +103,7 @@ function cleanCart() {
 }
 
 // Exercise 3
-function calculateTotal(cartToCalculate) {
+function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
       
     total=0;
@@ -113,13 +113,13 @@ function calculateTotal(cartToCalculate) {
         total+=cartToCalculate[i].price;
     }
     */
-    for (let i=0; i <cartToCalculate.length;i++) {
+    for (let i=0; i <cart.length;i++) {
 
-        if (cartToCalculate[i].subtotalWithDiscount) {
-          total += cartToCalculate[i].subtotalWithDiscount;
+        if (cart[i].subtotalWithDiscount) {
+          total += cart[i].subtotalWithDiscount;
         } 
         else {
-          total += cartToCalculate[i].subtotal;
+          total += cart[i].subtotal;
         }
     }
    
@@ -187,7 +187,7 @@ function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
     generateCart();
     applyPromotionsCart();
-    calculateTotal(cart);
+    calculateTotal();
     //console.log("printCart:"+JSON.stringify(cart))
 
     let cart_list = document.getElementById("cart_list");
